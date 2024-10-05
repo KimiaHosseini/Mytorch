@@ -48,3 +48,48 @@ Core Components of MyTorch
 
 ## Model (model.py):
         Likely serves as the main file where models are defined, and training loops are managed. It’s where the forward pass (predictions) and backward pass (gradients) are computed.
+
+
+## simple_network.ipynb:
+
+This notebook demonstrates how to build and train a simple feedforward neural network (also known as a fully connected or dense network) using the MyTorch framework.
+
+    Architecture:
+        A typical model would consist of a series of Linear layers interspersed with activation functions like ReLU or Sigmoid.
+        For example, a basic two-layer network might have one hidden layer followed by an output layer. The hidden layer could use the ReLU activation, and the output layer might use Softmax for multi-class classification.
+
+    Training Process:
+        The dataset is loaded using the DataLoader utility.
+        A loss function like Cross-Entropy or MSE is used, depending on the task.
+        The optimizer, such as SGD or Adam, updates the model parameters by minimizing the loss function.
+
+This notebook serves as an introduction to the core concepts in neural networks, such as forward and backward propagation, weight updates, and error minimization.
+## MNIST-cnn.ipynb:
+
+This notebook provides an implementation of a Convolutional Neural Network (CNN) using MyTorch to classify images from the MNIST dataset.
+
+    Architecture:
+        The network uses Conv2D layers to capture spatial features from the MNIST digits, followed by MaxPool2D layers to reduce the dimensionality.
+        The final layers are typically fully connected (Linear) layers, which map the extracted features to class probabilities.
+        The activations used are typically ReLU after each convolutional layer, with Softmax applied to the final layer for multi-class classification.
+
+    Dataset:
+        The MNIST dataset consists of 28x28 grayscale images of handwritten digits (0-9). The goal is to classify each image into one of 10 categories.
+        The notebook demonstrates how to load the MNIST dataset, preprocess the images (such as normalization), and use the MyTorch DataLoader.
+
+    Training:
+        The CNN is trained on the MNIST data using a loss function like Cross-Entropy and an optimizer like Adam or SGD.
+        During training, the CNN learns to detect features such as edges, curves, and textures that are helpful in recognizing handwritten digits.
+
+## MNIST-mlp.ipynb:
+
+This notebook provides an implementation of a Multi-Layer Perceptron (MLP) for classifying the MNIST dataset using MyTorch.
+
+    Architecture:
+        An MLP consists of multiple Linear layers with activation functions like ReLU or Sigmoid applied between layers.
+        Unlike the CNN, the MLP does not explicitly leverage the spatial structure of the input images. The input images are flattened into 1D vectors before being passed through the MLP.
+        The network typically ends with a Softmax layer to output probabilities for each digit class.
+
+    Training:
+        Like the CNN notebook, the MLP is trained using a loss function such as Cross-Entropy and an optimizer like SGD or Adam.
+        The training process includes forward passes (where predictions are made), backward passes (where gradients are calculated), and parameter updates (using the optimizer).
